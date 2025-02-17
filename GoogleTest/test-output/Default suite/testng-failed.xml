@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="mytests.SeleniumGridParallel">
+      <class name="mytests.GoogleHomePageTest">
         <methods>
-          <include name="setup"/>
+          <include name="googleTitleTest"/>
+          <include name="verifyAllWindows"/>
+          <include name="isTextBoxDisplayed"/>
           <include name="tearDown"/>
-          <include name="testGoogle"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- mytests.SeleniumGridParallel -->
+      </class> <!-- mytests.GoogleHomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

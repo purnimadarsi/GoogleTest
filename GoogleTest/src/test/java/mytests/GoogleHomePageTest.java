@@ -31,20 +31,20 @@ public class GoogleHomePageTest {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void googleTitleTest() {
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "Google");
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void isTextBoxDisplayed() {
 		waitForElementToLoad(By.name("q"));
 		boolean displayed = driver.findElement(By.xpath("//textarea[@name='q']")).isDisplayed();
 		Assert.assertTrue(displayed);
 		
 	}
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void dispaly_Searchbox_Suggestions() {
 		driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys("selenium testing");
 		waitForElementToLoad(By.cssSelector("ul[role='listbox'] >li"));
@@ -57,7 +57,7 @@ public class GoogleHomePageTest {
 
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void verifyAllWindows() {
 
 		String parentWindow = driver.getWindowHandle();
@@ -92,7 +92,7 @@ public class GoogleHomePageTest {
 	
 	@AfterMethod
 	public void tearDown() {
-		//driver.quit();
+		driver.quit();
 	}
 
 }
